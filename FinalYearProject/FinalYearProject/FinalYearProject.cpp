@@ -3,6 +3,7 @@
 
 #include "stdafx.h"
 #include "FinalYearProject.h"
+#include "GameManager.h"
 #include <SFML/Graphics.hpp>
 
 #define MAX_LOADSTRING 100
@@ -30,6 +31,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 	while (window.isOpen())
 	{
 		sf::Event event;
+		GameManager testGameManager(sf::Vector2i(10, 10));
 		while (window.pollEvent(event))
 		{
 			if (event.type == sf::Event::Closed)

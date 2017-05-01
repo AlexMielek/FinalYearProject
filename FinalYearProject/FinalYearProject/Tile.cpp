@@ -6,6 +6,10 @@ Tile::Tile()
 {
 }
 
+Tile::Tile(TileStats stats)
+{
+	statistics = stats;
+}
 
 Tile::~Tile()
 {

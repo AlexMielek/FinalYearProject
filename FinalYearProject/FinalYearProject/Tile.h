@@ -22,27 +22,33 @@ enum Climate
 
 enum Mineral
 {
-
+	HardMetal,
+	SoftMetal,
+	LuxuaryMetal,
+	None
 };
 
 enum Animal
 {
 	Consumable,
-	Work
+	Work,
+	Unusable
 };
 
 enum Plant
 {
 	HardWood,
 	SoftWood,
-	FoodCrops
+	FoodCrops,
+	Misc
 };
 
 enum Fertility
 {
 	High,
 	Medium,
-	Low
+	Low,
+	Barren
 };
 
 struct TileStats
@@ -59,6 +65,7 @@ class Tile
 {
 public:
 	Tile();
+	Tile(TileStats stats);
 	~Tile();
 
 	TileStats GetStatistics() { return statistics; }

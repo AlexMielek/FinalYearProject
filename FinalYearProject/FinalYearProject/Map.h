@@ -7,6 +7,9 @@ class Map
 {
 public:
 	Map();
+
+	//Create a completely random map.
+	Map(sf::Vector2i widthHeight);
 	~Map();
 
 	std::vector<Tile*>* GetMapTiles() { return &Tiles; }
