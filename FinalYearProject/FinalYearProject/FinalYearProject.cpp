@@ -24,23 +24,22 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
                      _In_ LPWSTR    lpCmdLine,
                      _In_ int       nCmdShow)
 {
-	sf::RenderWindow window(sf::VideoMode(800, 600), "FinalYearProject");
-	sf::CircleShape shape(100.f);
-	shape.setFillColor(sf::Color::Green);
+	//sf::RenderWindow window(sf::VideoMode(800, 600), "FinalYearProject");
+	//sf::CircleShape shape(100.f);
+	//shape.setFillColor(sf::Color::Green);
+	GameManager testGameManager(sf::Vector2i(10, 10), "TerrainLandFoliageNoPlant.png");
 
-	while (window.isOpen())
+	while (testGameManager.GetGraphicsManager()->GetMainWindow()->isOpen())
 	{
 		sf::Event event;
-		GameManager testGameManager(sf::Vector2i(10, 10));
-		while (window.pollEvent(event))
+		
+		while (testGameManager.GetGraphicsManager()->GetMainWindow()->pollEvent(event))
 		{
 			if (event.type == sf::Event::Closed)
-				window.close();
+				testGameManager.GetGraphicsManager()->GetMainWindow()->close();
 		}
 
-		window.clear();
-		window.draw(shape);
-		window.display();
+		testGameManager.Update();
 	}
 
 	return 0;

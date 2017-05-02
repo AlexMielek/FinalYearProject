@@ -8,11 +8,13 @@ public:
 	GameManager();
 
 	//Create a new game manager with a completely random map.
-	GameManager(sf::Vector2i mapWidthHeight);
+	GameManager(sf::Vector2i mapWidthHeight, std::string spriteSheetFileName);
 	
 	//Create a new game manager and load in an existing map.
 	GameManager(std::string mapFileName);
 	~GameManager();
+
+	GraphicsManager* GetGraphicsManager() { return &graphicsManager; }
 
 	void Update();
 

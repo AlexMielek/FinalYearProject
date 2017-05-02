@@ -1,4 +1,5 @@
 #pragma once
+#include <SFML\System.hpp>
 
 enum Topography
 {
@@ -70,7 +71,19 @@ public:
 
 	TileStats GetStatistics() { return statistics; }
 
+	sf::Vector2i GetSpriteOffset() { return spriteOffset; }
+
+	void RandomlyGenerateTileStats();
+
 private:
 	TileStats statistics;
+
+	sf::Vector2i spriteOffset;
+
+	sf::Vector3i climateColour;
+
+	void SetSpriteOffset();
+
+	void SetClimateColour();
 };
 
