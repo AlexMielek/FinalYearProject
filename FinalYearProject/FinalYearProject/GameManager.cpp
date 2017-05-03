@@ -15,6 +15,7 @@ GameManager::GameManager(sf::Vector2i mapWidthHeight, std::string spriteSheetFil
 {
 	map = Map(mapWidthHeight);
 	graphicsManager = GraphicsManager(spriteSheetFileName);
+	graphicsManager.SetUpClimateBackground(&map);
 }
 
 GameManager::~GameManager()

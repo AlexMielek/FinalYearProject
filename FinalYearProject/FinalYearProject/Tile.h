@@ -1,5 +1,6 @@
 #pragma once
 #include <SFML\System.hpp>
+#include <SFML\Graphics.hpp>
 
 enum Topography
 {
@@ -73,6 +74,8 @@ public:
 
 	sf::Vector2i GetSpriteOffset() { return spriteOffset; }
 
+	sf::Color GetClimateColour() { return climateColour; }
+
 	void RandomlyGenerateTileStats();
 
 private:
@@ -80,7 +83,7 @@ private:
 
 	sf::Vector2i spriteOffset;
 
-	sf::Vector3i climateColour;
+	sf::Color climateColour;
 
 	void SetSpriteOffset();
 

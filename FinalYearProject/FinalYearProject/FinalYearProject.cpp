@@ -27,7 +27,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 	//sf::RenderWindow window(sf::VideoMode(800, 600), "FinalYearProject");
 	//sf::CircleShape shape(100.f);
 	//shape.setFillColor(sf::Color::Green);
-	GameManager testGameManager(sf::Vector2i(10, 10), "TerrainLandFoliageNoPlant.png");
+	GameManager testGameManager(sf::Vector2i(30, 30), "TerrainLandFoliageNoPlant.png");
 
 	while (testGameManager.GetGraphicsManager()->GetMainWindow()->isOpen())
 	{

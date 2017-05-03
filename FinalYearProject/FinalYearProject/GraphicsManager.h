@@ -16,6 +16,8 @@ public:
 
 	void Render(Map* map);
 
+	void SetUpClimateBackground(Map* map);
+
 private:
 	Camera* camera;
 
@@ -24,5 +26,7 @@ private:
 	sf::Sprite spriteSheet;
 
 	sf::Texture spriteSheetTexture;
+
+	std::vector<sf::RectangleShape> climateLayer;
 };
 

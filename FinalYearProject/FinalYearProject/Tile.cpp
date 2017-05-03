@@ -6,6 +6,7 @@ Tile::Tile()
 {
 	RandomlyGenerateTileStats();
 	SetSpriteOffset();
+	SetClimateColour();
 }
 
 Tile::Tile(TileStats stats)
@@ -135,13 +136,13 @@ void Tile::SetSpriteOffset()
 	switch (statistics.topography)
 	{
 		case Topography::DeepSea:
-			spriteOffset = sf::Vector2i(160, 32);
+			spriteOffset = sf::Vector2i(128, 32);
 			break;
 		case Topography::ShallowSea:
-			spriteOffset = sf::Vector2i(160, 0);
+			spriteOffset = sf::Vector2i(128, 0);
 			break;
 		case Topography::Impassable:
-			spriteOffset = sf::Vector2i(160, 64);
+			spriteOffset = sf::Vector2i(128, 64);
 			break;
 		case Topography::Depression:
 			switch (statistics.plant)
@@ -219,19 +220,19 @@ void Tile::SetClimateColour()
 	switch (statistics.climate)
 	{
 		case Climate::Arid:
-			climateColour = sf::Vector3i(203, 222, 98);
+			climateColour = sf::Color(203, 222, 98);
 			break;
 		case Climate::Cold:
-			climateColour = sf::Vector3i(35, 167, 119);
+			climateColour = sf::Color(35, 167, 119);
 			break;
 		case Climate::Polar:
-			climateColour = sf::Vector3i(186, 243, 237);
+			climateColour = sf::Color(186, 243, 237);
 			break;
 		case Climate::Temperate:
-			climateColour = sf::Vector3i(15, 198, 52);
+			climateColour = sf::Color(15, 198, 52);
 			break;
 		case Climate::Tropical:
-			climateColour = sf::Vector3i(110, 219, 30);
+			climateColour = sf::Color(110, 219, 30);
 			break;
 	}
 }

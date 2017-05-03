@@ -10,9 +10,9 @@ Map::Map(sf::Vector2i widthHeight)
 	dimensions = widthHeight;
 	//int y = 0;
 	//int x = 0;
-	for (int y = 0; y < 10; y++)
+	for (int y = 0; y < widthHeight.y; y++)
 	{
-		for (int x = 0; x < 10; x++)
+		for (int x = 0; x < widthHeight.x; x++)
 		{
 			Tile* newTile = new Tile();
 
