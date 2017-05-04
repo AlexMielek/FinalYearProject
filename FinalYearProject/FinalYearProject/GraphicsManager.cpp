@@ -17,8 +17,8 @@ GraphicsManager::GraphicsManager(std::string spriteFileName)
 	text->loadFromFile("TerrainLandFoliageNoPlant.png");
 	spriteSheet.setTexture(*text);
 
-	camera = new Camera();
-	inspector = new Inspector();
+	camera = new Camera(mainWindow);
+	inspector = new Inspector(mainWindow);
 }
 
 GraphicsManager::~GraphicsManager()

@@ -27,6 +27,8 @@ public:
 
 	void ToggleZoomLock(bool newZoomLockValue) { zoomLock = newZoomLockValue; }
 
+	Inspector* GetInspector() { return inspector; }
+
 private:
 	bool zoomLock = false;
 

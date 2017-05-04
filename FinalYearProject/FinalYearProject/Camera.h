@@ -7,6 +7,7 @@ class Camera
 {
 public:
 	Camera();
+	Camera(sf::RenderWindow* window);
 	Camera(sf::Vector2i widthHeight, sf::Vector2i worldSize);
 	~Camera();
 

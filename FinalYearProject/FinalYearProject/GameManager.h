@@ -20,11 +20,13 @@ public:
 
 	void Update();
 
-	sf::Vector2i GetMouseClickMapLocation();
+	void OnMouseClick();
 
 private:
 	Map* map;
 
 	GraphicsManager* graphicsManager;
+
+	int tileAddress = 0;
 };
 

@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "GameManager.h"
+#include "Inspector.h"
 
 
 GameManager::GameManager()
@@ -69,6 +70,11 @@ void GameManager::ManageInput()
 	{
 		graphicsManager->ToggleZoomLock(false);
 	}
+
+	if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+	{
+		OnMouseClick();
+	}
 }
 
 void GameManager::Update()
@@ -77,8 +83,8 @@ void GameManager::Update()
 	graphicsManager->Render(map);
 }
 
-sf::Vector2i GameManager::GetMouseClickMapLocation()
+void GameManager::OnMouseClick()
 {
-	 sf::Vector2i kjkjkj;
-	 return kjkjkj;
+	graphicsManager->GetInspector()->DisplayTileStats(map->GetMapTiles()->at(tileAddress));
+	tileAddress++;
 }

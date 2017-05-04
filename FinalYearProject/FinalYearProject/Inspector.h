@@ -7,6 +7,7 @@ class Inspector
 {
 public:
 	Inspector();
+	Inspector(sf::RenderWindow* window);
 	~Inspector();
 
 	void Update();
@@ -23,6 +24,8 @@ public:
 	sf::Text* GetTextToDisplay() { return &textToDisplay; }
 
 	void SetTextToDisplay();
+
+	void DisplayTileStats(Tile* tileToDisplay);
 
 private:
 	Tile* selectedTile;
