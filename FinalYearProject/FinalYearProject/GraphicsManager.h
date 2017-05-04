@@ -18,6 +18,11 @@ public:
 
 	void SetUpClimateBackground(Map* map);
 
+	void MoveCamera(sf::Vector2i moveDistance);
+
+	//True = zoom in, false = zoom out;
+	void Zoom(bool inOrOut);
+	bool jfbsdakbnfdkaj = false;
 private:
 	Camera* camera;
 
@@ -28,5 +33,11 @@ private:
 	sf::Texture spriteSheetTexture;
 
 	std::vector<sf::RectangleShape> climateLayer;
+
+	sf::View* mainView;
+	float mainWindowZoom = 1.0f;
+	
+
+	sf::View* inspectorView;
 };
 

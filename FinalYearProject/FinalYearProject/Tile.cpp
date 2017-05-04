@@ -20,46 +20,7 @@ Tile::~Tile()
 
 void Tile::RandomlyGenerateTileStats()
 {
-	//Topography
-	switch (rand() % 7)
-	{
-	case 0:
-		statistics.topography = Topography::DeepSea;
-		break;
-	case 1:
-		statistics.topography = Topography::Depression;
-		break;
-	case 2:
-		statistics.topography = Topography::Hills;
-		break;
-	case 3:
-		statistics.topography = Topography::Impassable;
-		break;
-	case 4:
-		statistics.topography = Topography::Mountainous;
-		break;
-	case 5:
-		statistics.topography = Topography::Plains;
-		break;
-	case 6:
-		statistics.topography = Topography::ShallowSea;
-		break;
-	}
-
-	//Animal
-	switch (rand() % 3)
-	{
-	case 0:
-		statistics.animal = Animal::Consumable;
-		break;
-	case 1:
-		statistics.animal = Animal::Work;
-		break;
-	case 2:
-		statistics.animal = Animal::Unusable;
-	}
-
-	//Cliamate
+	//Climate
 	switch (rand() % 5)
 	{
 	case 0:
@@ -77,6 +38,57 @@ void Tile::RandomlyGenerateTileStats()
 	case 4:
 		statistics.climate = Climate::Tropical;
 		break;
+	}
+
+	//Topography
+	switch (rand() % 7)
+	{
+	case 0:
+		statistics.topography = Topography::DeepSea;
+		statistics.animal = Animal::Unusable;
+		statistics.fertility = Fertility::Barren;
+		statistics.mineral = Mineral::None;
+		statistics.plant = Plant::Misc;
+		return;
+	case 1:
+		statistics.topography = Topography::Depression;
+		break;
+	case 2:
+		statistics.topography = Topography::Hills;
+		break;
+	case 3:
+		statistics.topography = Topography::Impassable;
+		statistics.animal = Animal::Unusable;
+		statistics.fertility = Fertility::Barren;
+		statistics.mineral = Mineral::None;
+		statistics.plant = Plant::Misc;
+		return;
+	case 4:
+		statistics.topography = Topography::Mountainous;
+		break;
+	case 5:
+		statistics.topography = Topography::Plains;
+		break;
+	case 6:
+		statistics.topography = Topography::ShallowSea;
+		statistics.animal = Animal::Unusable;
+		statistics.fertility = Fertility::Barren;
+		statistics.mineral = Mineral::None;
+		statistics.plant = Plant::Misc;
+		return;
+	}
+
+	//Animal
+	switch (rand() % 3)
+	{
+	case 0:
+		statistics.animal = Animal::Consumable;
+		break;
+	case 1:
+		statistics.animal = Animal::Work;
+		break;
+	case 2:
+		statistics.animal = Animal::Unusable;
 	}
 
 	//Fertility

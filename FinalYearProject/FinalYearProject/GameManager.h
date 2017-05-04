@@ -16,10 +16,15 @@ public:
 
 	GraphicsManager* GetGraphicsManager() { return &graphicsManager; }
 
+	void ManageInput();
+
 	void Update();
 
 private:
 	Map map;
+
 	GraphicsManager graphicsManager;
+
+	float inputTimer = -1.0f;
 };
 

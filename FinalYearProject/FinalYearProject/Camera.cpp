@@ -4,6 +4,7 @@
 
 Camera::Camera()
 {
+	worldPosition = sf::Vector2i(0, 0);
 }
 
 Camera::Camera(sf::Vector2i widthHeight, sf::Vector2i worldSize)

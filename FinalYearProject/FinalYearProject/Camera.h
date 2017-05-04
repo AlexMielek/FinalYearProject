@@ -10,6 +10,8 @@ public:
 
 	void MoveCamera(sf::Vector2i distanceToMove);
 
+	sf::Vector2i GetPosition() { return worldPosition; }
+
 private:
 	sf::Vector2i dimensions;
 	sf::Vector2i worldPosition;
