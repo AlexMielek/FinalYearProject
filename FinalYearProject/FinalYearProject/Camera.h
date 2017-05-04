@@ -1,5 +1,7 @@
+//Class containing the location of the 'camera' in world space, alongside the view for the main window.
 #pragma once
 #include <SFML\System.hpp>
+#include <SFML\Graphics.hpp>
 
 class Camera
 {
@@ -12,8 +14,11 @@ public:
 
 	sf::Vector2i GetPosition() { return worldPosition; }
 
+	sf::View* GetCameraView() { return cameraView; }
+
 private:
 	sf::Vector2i dimensions;
 	sf::Vector2i worldPosition;
+	sf::View* cameraView;
 };
 

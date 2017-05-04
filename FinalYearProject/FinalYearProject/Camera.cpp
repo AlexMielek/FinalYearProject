@@ -5,12 +5,16 @@
 Camera::Camera()
 {
 	worldPosition = sf::Vector2i(0, 0);
+	cameraView = new sf::View();
+	cameraView->setViewport(sf::FloatRect(0.0f, 0.0f, 0.75f, 1.0f));
 }
 
 Camera::Camera(sf::Vector2i widthHeight, sf::Vector2i worldSize)
 {
 	dimensions = widthHeight;
 	worldPosition = sf::Vector2i(worldSize.x / 2, worldSize.y / 2);
+	cameraView = new sf::View();
+	cameraView->setViewport(sf::FloatRect(0.0f, 0.0f, 0.75f, 1.0f));
 }
 
 

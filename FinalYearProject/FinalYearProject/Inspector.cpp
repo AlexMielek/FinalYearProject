@@ -4,6 +4,8 @@
 
 Inspector::Inspector()
 {
+	inspectorView = new sf::View();
+	inspectorView->setViewport(sf::FloatRect(0.75f, 0.0f, 0.25f, 1.0f));
 }
 
 

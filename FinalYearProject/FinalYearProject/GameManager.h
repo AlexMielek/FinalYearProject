@@ -14,17 +14,15 @@ public:
 	GameManager(std::string mapFileName);
 	~GameManager();
 
-	GraphicsManager* GetGraphicsManager() { return &graphicsManager; }
+	GraphicsManager* GetGraphicsManager() { return graphicsManager; }
 
 	void ManageInput();
 
 	void Update();
 
 private:
-	Map map;
+	Map* map;
 
-	GraphicsManager graphicsManager;
-
-	float inputTimer = -1.0f;
+	GraphicsManager* graphicsManager;
 };
 

@@ -3,6 +3,8 @@
 
 class Camera;
 
+class Inspector;
+
 class Map;
 
 class GraphicsManager
@@ -22,9 +24,12 @@ public:
 
 	//True = zoom in, false = zoom out;
 	void Zoom(bool inOrOut);
+
 	bool jfbsdakbnfdkaj = false;
 private:
 	Camera* camera;
+
+	Inspector* inspector;
 
 	sf::RenderWindow* mainWindow;
 
@@ -34,10 +39,9 @@ private:
 
 	std::vector<sf::RectangleShape> climateLayer;
 
-	sf::View* mainView;
+	/*sf::View* mainView;
 	float mainWindowZoom = 1.0f;
-	
 
-	sf::View* inspectorView;
+	sf::View* inspectorView;*/
 };
 
