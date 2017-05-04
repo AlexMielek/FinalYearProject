@@ -20,6 +20,8 @@ public:
 
 	void Update();
 
+	sf::Vector2i GetMouseClickMapLocation();
+
 private:
 	Map* map;
 

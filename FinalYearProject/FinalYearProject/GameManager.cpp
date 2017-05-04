@@ -48,7 +48,7 @@ void GameManager::ManageInput()
 	{
 		graphicsManager->MoveCamera(sf::Vector2i(-1, 1));
 	}
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::X))
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
 	{
 		graphicsManager->MoveCamera(sf::Vector2i(0, 1));
 	}
@@ -67,7 +67,7 @@ void GameManager::ManageInput()
 	}
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::M))
 	{
-		graphicsManager->jfbsdakbnfdkaj = false;
+		graphicsManager->ToggleZoomLock(false);
 	}
 }
 
@@ -75,4 +75,10 @@ void GameManager::Update()
 {
 	ManageInput();
 	graphicsManager->Render(map);
+}
+
+sf::Vector2i GameManager::GetMouseClickMapLocation()
+{
+	 sf::Vector2i kjkjkj;
+	 return kjkjkj;
 }

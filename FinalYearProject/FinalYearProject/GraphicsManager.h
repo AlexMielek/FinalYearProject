@@ -25,8 +25,11 @@ public:
 	//True = zoom in, false = zoom out;
 	void Zoom(bool inOrOut);
 
-	bool jfbsdakbnfdkaj = false;
+	void ToggleZoomLock(bool newZoomLockValue) { zoomLock = newZoomLockValue; }
+
 private:
+	bool zoomLock = false;
+
 	Camera* camera;
 
 	Inspector* inspector;

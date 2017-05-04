@@ -20,11 +20,28 @@ public:
 
 	sf::View* GetInspectorView() { return inspectorView; }
 
+	sf::Text* GetTextToDisplay() { return &textToDisplay; }
+
+	void SetTextToDisplay();
+
 private:
 	Tile* selectedTile;
 
 	bool isOpen = true;
 
 	sf::View* inspectorView;
+
+	sf::Vector2i SelectedTileLocation;
+
+	std::string tileTopography = "";
+	std::string tileClimate = "";
+	std::string tileMineral = "";
+	std::string tileAnimal = "";
+	std::string tilePlant = "";
+	std::string tileFertility = "";
+
+	sf::Text textToDisplay;
+
+	sf::Font textFont;
 };
 

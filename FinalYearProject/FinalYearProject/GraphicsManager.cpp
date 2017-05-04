@@ -54,6 +54,9 @@ void GraphicsManager::Render(Map* map)
 		position += 1;
 	}
 	
+	mainWindow->setView(*inspector->GetInspectorView());
+	mainWindow->draw(*inspector->GetTextToDisplay());
+
 	mainWindow->display();
 }
 
@@ -80,16 +83,16 @@ void GraphicsManager::MoveCamera(sf::Vector2i moveDistance)
 
 void GraphicsManager::Zoom(bool inOrOut)
 {
-	if (!jfbsdakbnfdkaj)
+	if (!zoomLock)
 	{
 		if (inOrOut)
 		{
 			camera->GetCameraView()->zoom(0.8f);
-			jfbsdakbnfdkaj = true;
+			zoomLock = true;
 			return;
 		}
 
 		camera->GetCameraView()->zoom(1.2f);
-		jfbsdakbnfdkaj = true;
+		zoomLock = true;
 	}
 }
