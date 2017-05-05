@@ -29,6 +29,8 @@ public:
 
 	Inspector* GetInspector() { return inspector; }
 
+	Camera* GetCamera() { return camera; }
+
 private:
 	bool zoomLock = false;
 

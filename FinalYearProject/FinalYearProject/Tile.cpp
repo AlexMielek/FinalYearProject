@@ -9,6 +9,11 @@ Tile::Tile()
 	SetClimateColour();
 }
 
+Tile::Tile(int leaveBlank)
+{
+
+}
+
 Tile::Tile(TileStats stats)
 {
 	statistics = stats;

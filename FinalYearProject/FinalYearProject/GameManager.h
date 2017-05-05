@@ -26,7 +26,5 @@ private:
 	Map* map;
 
 	GraphicsManager* graphicsManager;
-
-	int tileAddress = 0;
 };
 

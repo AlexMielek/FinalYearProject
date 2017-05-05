@@ -14,6 +14,7 @@ Camera::Camera(sf::RenderWindow* window)
 	worldPosition = sf::Vector2i(0, 0);
 	cameraView = new sf::View(sf::FloatRect(0, 0, (window->getSize().x / 4) * 3, window->getSize().y));
 	cameraView->setViewport(sf::FloatRect(0.0f, 0.0f, 0.75f, 1.0f));
+	//cameraView->setCenter(0, 0);
 }
 
 Camera::Camera(sf::Vector2i widthHeight, sf::Vector2i worldSize)

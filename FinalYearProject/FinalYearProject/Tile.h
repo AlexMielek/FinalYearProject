@@ -67,6 +67,7 @@ class Tile
 {
 public:
 	Tile();
+	Tile(int leaveBlank);
 	Tile(TileStats stats);
 	~Tile();
 

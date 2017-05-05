@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "GameManager.h"
 #include "Inspector.h"
-
+#include "Camera.h"
 
 GameManager::GameManager()
 {
@@ -85,6 +85,19 @@ void GameManager::Update()
 
 void GameManager::OnMouseClick()
 {
-	graphicsManager->GetInspector()->DisplayTileStats(map->GetMapTiles()->at(tileAddress));
-	tileAddress++;
+	sf::RenderWindow* window = graphicsManager->GetMainWindow();
+
+	sf::Vector2i mapDimensions = map->GetDimensions();
+	sf::Vector2i mousePositionDesktop = sf::Mouse::getPosition(*window);
+	sf::Vector2i mousePosition = (sf::Vector2i)graphicsManager->GetMainWindow()->mapPixelToCoords(mousePositionDesktop, *graphicsManager->GetCamera()->GetCameraView());
+
+	if ((mousePosition.x / 32) < mapDimensions.x && (mousePosition.y / 32) < mapDimensions.y)
+	{
+		int x = mousePosition.x / 32;
+		int y = mousePosition.y / 32;
+		int tileAddress = mapDimensions.x * y + x;
+		graphicsManager->GetInspector()->DisplayTileStats(map->GetMapTiles()->at(tileAddress));
+		return;
+	}
+	graphicsManager->GetInspector()->DisplayTileStats(new Tile(0));
 }
