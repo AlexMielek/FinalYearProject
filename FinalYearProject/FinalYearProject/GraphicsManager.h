@@ -31,6 +31,8 @@ public:
 
 	Camera* GetCamera() { return camera; }
 
+	float GetCameraZoom() { return mainWindowZoom; }
+
 private:
 	bool zoomLock = false;
 
@@ -45,9 +47,10 @@ private:
 	sf::Texture spriteSheetTexture;
 
 	std::vector<sf::RectangleShape> climateLayer;
-
-	/*sf::View* mainView;
+	
 	float mainWindowZoom = 1.0f;
+	/*sf::View* mainView;
+	
 
 	sf::View* inspectorView;*/
 };

@@ -88,11 +88,13 @@ void GraphicsManager::Zoom(bool inOrOut)
 		if (inOrOut)
 		{
 			camera->GetCameraView()->zoom(0.8f);
+			mainWindowZoom *= 0.8f;
 			zoomLock = true;
 			return;
 		}
 
 		camera->GetCameraView()->zoom(1.2f);
+		mainWindowZoom *= 1.2f;
 		zoomLock = true;
 	}
 }

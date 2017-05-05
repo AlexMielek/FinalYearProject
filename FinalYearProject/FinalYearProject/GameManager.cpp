@@ -86,12 +86,15 @@ void GameManager::Update()
 void GameManager::OnMouseClick()
 {
 	sf::RenderWindow* window = graphicsManager->GetMainWindow();
+	Camera* camera = graphicsManager->GetCamera();
 
 	sf::Vector2i mapDimensions = map->GetDimensions();
 	sf::Vector2i mousePositionDesktop = sf::Mouse::getPosition(*window);
-	sf::Vector2i mousePosition = (sf::Vector2i)graphicsManager->GetMainWindow()->mapPixelToCoords(mousePositionDesktop, *graphicsManager->GetCamera()->GetCameraView());
+	sf::Vector2i mousePosition = (sf::Vector2i)window->mapPixelToCoords(mousePositionDesktop, *camera->GetCameraView()) + camera->GetPosition();
 
-	if ((mousePosition.x / 32) < mapDimensions.x && (mousePosition.y / 32) < mapDimensions.y)
+	if (mousePosition.x / 32 < mapDimensions.x && 
+		mousePosition.y / 32 < mapDimensions.y && 
+		mousePosition.x >= 0 && mousePosition.y >= 0)
 	{
 		int x = mousePosition.x / 32;
 		int y = mousePosition.y / 32;
