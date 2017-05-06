@@ -148,6 +148,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BmpWriter.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="FinalYearProject.h" />
     <ClInclude Include="GameManager.h" />
@@ -163,6 +164,7 @@
     <ClInclude Include="Tile.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BmpWriter.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="FinalYearProject.cpp" />
     <ClCompile Include="GameManager.cpp" />

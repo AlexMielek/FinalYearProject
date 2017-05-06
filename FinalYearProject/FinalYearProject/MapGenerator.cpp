@@ -11,7 +11,7 @@ MapGenerator::~MapGenerator()
 {
 }
 
-void MapGenerator::GenerateMap()
+void MapGenerator::GenerateMap(MapParams paramaters)
 {
 	//Get Topography settings;
 	//Place points as appropriate in red channel.

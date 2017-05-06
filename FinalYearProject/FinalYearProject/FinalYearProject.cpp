@@ -4,6 +4,7 @@
 #include "stdafx.h"
 #include "FinalYearProject.h"
 #include "GameManager.h"
+#include "BmpWriter.h"
 #include <SFML/Graphics.hpp>
 
 #define MAX_LOADSTRING 100
@@ -25,6 +26,10 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
                      _In_ int       nCmdShow)
 {
 	GameManager testGameManager(sf::Vector2i(30, 10), "TerrainLandFoliageNoPlant.png");
+
+	BmpWriter test;
+
+	test.createBmp(2, 2);
 
 	while (testGameManager.GetGraphicsManager()->GetMainWindow()->isOpen())
 	{
