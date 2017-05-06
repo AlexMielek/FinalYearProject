@@ -153,28 +153,28 @@ void Tile::SetSpriteOffset()
 	switch (statistics.topography)
 	{
 		case Topography::DeepSea:
-			spriteOffset = sf::Vector2i(128, 32);
+			spriteOffsetAddress = 0;
 			break;
 		case Topography::ShallowSea:
-			spriteOffset = sf::Vector2i(128, 0);
+			spriteOffsetAddress = 1;
 			break;
 		case Topography::Impassable:
-			spriteOffset = sf::Vector2i(128, 64);
+			spriteOffsetAddress = 2;
 			break;
 		case Topography::Depression:
 			switch (statistics.plant)
 			{
 				case Plant::FoodCrops:
-					spriteOffset = sf::Vector2i(0, 0);
+					spriteOffsetAddress = 3;
 					break;
 				case Plant::SoftWood:
-					spriteOffset = sf::Vector2i(0, 32);
+					spriteOffsetAddress = 4;
 					break;
 				case Plant::HardWood:
-					spriteOffset = sf::Vector2i(0, 64);
+					spriteOffsetAddress = 5;
 					break;
 				case Plant::Misc:
-					spriteOffset = sf::Vector2i(0, 96);
+					spriteOffsetAddress = 6;
 					break;
 			}
 			break;
@@ -182,16 +182,16 @@ void Tile::SetSpriteOffset()
 			switch (statistics.plant)
 			{
 			case Plant::FoodCrops:
-				spriteOffset = sf::Vector2i(64, 0);
+				spriteOffsetAddress = 7;
 				break;
 			case Plant::SoftWood:
-				spriteOffset = sf::Vector2i(64, 32);
+				spriteOffsetAddress = 8;
 				break;
 			case Plant::HardWood:
-				spriteOffset = sf::Vector2i(64, 64);
+				spriteOffsetAddress = 9;
 				break;
 			case Plant::Misc:
-				spriteOffset = sf::Vector2i(64, 96);
+				spriteOffsetAddress = 10;
 				break;
 			}
 			break;
@@ -199,16 +199,16 @@ void Tile::SetSpriteOffset()
 			switch (statistics.plant)
 			{
 			case Plant::FoodCrops:
-				spriteOffset = sf::Vector2i(96, 0);
+				spriteOffsetAddress = 11;
 				break;
 			case Plant::SoftWood:
-				spriteOffset = sf::Vector2i(96, 32);
+				spriteOffsetAddress = 12;
 				break;
 			case Plant::HardWood:
-				spriteOffset = sf::Vector2i(96, 64);
+				spriteOffsetAddress = 13;
 				break;
 			case Plant::Misc:
-				spriteOffset = sf::Vector2i(96, 96);
+				spriteOffsetAddress = 14;
 				break;
 			}
 			break;
@@ -216,16 +216,16 @@ void Tile::SetSpriteOffset()
 			switch (statistics.plant)
 			{
 			case Plant::FoodCrops:
-				spriteOffset = sf::Vector2i(32, 0);
+				spriteOffsetAddress = 15;
 				break;
 			case Plant::SoftWood:
-				spriteOffset = sf::Vector2i(32, 32);
+				spriteOffsetAddress = 16;
 				break;
 			case Plant::HardWood:
-				spriteOffset = sf::Vector2i(32, 64);
+				spriteOffsetAddress = 17;
 				break;
 			case Plant::Misc:
-				spriteOffset = sf::Vector2i(32, 96);
+				spriteOffsetAddress = 18;
 				break;
 			}
 			break;

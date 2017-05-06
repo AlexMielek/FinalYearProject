@@ -26,5 +26,9 @@ private:
 	Map* map;
 
 	GraphicsManager* graphicsManager;
+
+	sf::Keyboard::Key zoomKeyPressed;
+
+	bool canAdjustZoom = true;
 };
 

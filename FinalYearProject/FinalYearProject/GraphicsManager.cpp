@@ -19,6 +19,26 @@ GraphicsManager::GraphicsManager(std::string spriteFileName)
 
 	camera = new Camera(mainWindow);
 	inspector = new Inspector(mainWindow);
+			
+	textureRects.push_back(sf::IntRect(128, 32, 32, 32));
+	textureRects.push_back(sf::IntRect(128, 0, 32, 32));
+	textureRects.push_back(sf::IntRect(128, 64, 32, 32));
+	textureRects.push_back(sf::IntRect(0, 0, 32, 32));
+	textureRects.push_back(sf::IntRect(0, 32, 32, 32));
+	textureRects.push_back(sf::IntRect(0, 64, 32, 32));
+	textureRects.push_back(sf::IntRect(0, 96, 32, 32));
+	textureRects.push_back(sf::IntRect(64, 0, 32, 32));
+	textureRects.push_back(sf::IntRect(64, 32, 32, 32));
+	textureRects.push_back(sf::IntRect(64, 64, 32, 32));
+	textureRects.push_back(sf::IntRect(64, 96, 32, 32));
+	textureRects.push_back(sf::IntRect(96, 0, 32, 32));
+	textureRects.push_back(sf::IntRect(96, 32, 32, 32));
+	textureRects.push_back(sf::IntRect(96, 64, 32, 32));
+	textureRects.push_back(sf::IntRect(96, 96, 32, 32));
+	textureRects.push_back(sf::IntRect(32, 0, 32, 32));
+	textureRects.push_back(sf::IntRect(32, 32, 32, 32));
+	textureRects.push_back(sf::IntRect(32, 64, 32, 32));
+	textureRects.push_back(sf::IntRect(32, 96, 32, 32));
 }
 
 GraphicsManager::~GraphicsManager()
@@ -32,6 +52,8 @@ void GraphicsManager::Render(Map* map)
 
 	sf::Vector2f cameraPosition = (sf::Vector2f)camera->GetPosition();
 	sf::Vector2i mapDimensions = map->GetDimensions();
+
+	sf::Vector2i spritePixelSize(32, 32);
 
 	int position = 0;
 
@@ -48,8 +70,8 @@ void GraphicsManager::Render(Map* map)
 
 	for each (Tile* tile in tiles)
 	{
-		spriteSheet.setTextureRect(sf::IntRect(tile->GetSpriteOffset(), sf::Vector2i(32, 32)));
-		spriteSheet.setPosition(sf::Vector2f((position % mapDimensions.x) * 32, (position / mapDimensions.y) * 32) - cameraPosition);
+		spriteSheet.setTextureRect(textureRects[tile->GetSpriteOffset()]);
+		spriteSheet.setPosition(sf::Vector2f((position % mapDimensions.x) * 32, (position / mapDimensions.x) * 32) - cameraPosition);
 		mainWindow->draw(spriteSheet);
 		position += 1;
 	}
@@ -69,7 +91,7 @@ void GraphicsManager::SetUpClimateBackground(Map* map)
 	for each (Tile* tile in tiles)
 	{
 		sf::RectangleShape climateTile(sf::Vector2f(32, 32));
-		climateTile.setPosition((position % mapDimensions.x) * 32, (position / mapDimensions.y) * 32);
+		climateTile.setPosition((position % mapDimensions.x) * 32, (position / mapDimensions.x) * 32);
 		climateTile.setFillColor(sf::Color(tile->GetClimateColour()));
 		climateLayer.push_back(climateTile);
 		position++;
@@ -83,18 +105,14 @@ void GraphicsManager::MoveCamera(sf::Vector2i moveDistance)
 
 void GraphicsManager::Zoom(bool inOrOut)
 {
-	if (!zoomLock)
+	
+	if (inOrOut)
 	{
-		if (inOrOut)
-		{
-			camera->GetCameraView()->zoom(0.8f);
-			mainWindowZoom *= 0.8f;
-			zoomLock = true;
-			return;
-		}
-
-		camera->GetCameraView()->zoom(1.2f);
-		mainWindowZoom *= 1.2f;
-		zoomLock = true;
+		camera->GetCameraView()->zoom(0.8f);
+		mainWindowZoom *= 0.8f;
+		return;
 	}
+
+	camera->GetCameraView()->zoom(1.2f);
+	mainWindowZoom *= 1.2f;
 }

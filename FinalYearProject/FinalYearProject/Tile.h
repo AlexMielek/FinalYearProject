@@ -73,7 +73,7 @@ public:
 
 	TileStats GetStatistics() { return statistics; }
 
-	sf::Vector2i GetSpriteOffset() { return spriteOffset; }
+	int GetSpriteOffset() { return spriteOffsetAddress; }
 
 	sf::Color GetClimateColour() { return climateColour; }
 
@@ -82,7 +82,8 @@ public:
 private:
 	TileStats statistics;
 
-	sf::Vector2i spriteOffset;
+	//sf::Vector2i spriteOffset;
+	int spriteOffsetAddress;
 
 	sf::Color climateColour;
 

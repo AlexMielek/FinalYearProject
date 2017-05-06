@@ -25,8 +25,6 @@ public:
 	//True = zoom in, false = zoom out;
 	void Zoom(bool inOrOut);
 
-	void ToggleZoomLock(bool newZoomLockValue) { zoomLock = newZoomLockValue; }
-
 	Inspector* GetInspector() { return inspector; }
 
 	Camera* GetCamera() { return camera; }
@@ -34,8 +32,6 @@ public:
 	float GetCameraZoom() { return mainWindowZoom; }
 
 private:
-	bool zoomLock = false;
-
 	Camera* camera;
 
 	Inspector* inspector;
@@ -47,11 +43,9 @@ private:
 	sf::Texture spriteSheetTexture;
 
 	std::vector<sf::RectangleShape> climateLayer;
+
+	std::vector<sf::IntRect> textureRects;
 	
 	float mainWindowZoom = 1.0f;
-	/*sf::View* mainView;
-	
-
-	sf::View* inspectorView;*/
 };
 

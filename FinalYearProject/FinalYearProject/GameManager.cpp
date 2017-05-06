@@ -27,48 +27,55 @@ void GameManager::ManageInput()
 {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
 	{
-		graphicsManager->MoveCamera(sf::Vector2i(-1, -1));
+		graphicsManager->MoveCamera(sf::Vector2i(-5, -5));
 	}
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
 	{
-		graphicsManager->MoveCamera(sf::Vector2i(0, -1));
+		graphicsManager->MoveCamera(sf::Vector2i(0, -5));
 	}
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::E))
 	{
-		graphicsManager->MoveCamera(sf::Vector2i(1, -1));
+		graphicsManager->MoveCamera(sf::Vector2i(5, -5));
 	}
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
 	{
-		graphicsManager->MoveCamera(sf::Vector2i(-1, 0));
+		graphicsManager->MoveCamera(sf::Vector2i(-5, 0));
 	}
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
 	{
-		graphicsManager->MoveCamera(sf::Vector2i(1, 0));
+		graphicsManager->MoveCamera(sf::Vector2i(5, 0));
 	}
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z))
 	{
-		graphicsManager->MoveCamera(sf::Vector2i(-1, 1));
+		graphicsManager->MoveCamera(sf::Vector2i(-5, 5));
 	}
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
 	{
-		graphicsManager->MoveCamera(sf::Vector2i(0, 1));
+		graphicsManager->MoveCamera(sf::Vector2i(0, 5));
 	}
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::C))
 	{
-		graphicsManager->MoveCamera(sf::Vector2i(1, 1));
+		graphicsManager->MoveCamera(sf::Vector2i(5, 5));
 	}
 
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::P))
+	if (canAdjustZoom)
 	{
-		graphicsManager->Zoom(true);
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::P))
+		{
+			graphicsManager->Zoom(true);
+			zoomKeyPressed = sf::Keyboard::P;
+			canAdjustZoom = false;
+		}
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::L))
+		{
+			graphicsManager->Zoom(false);
+			zoomKeyPressed = sf::Keyboard::L;
+			canAdjustZoom = false;
+		}
 	}
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::L))
+	else if(sf::Keyboard::isKeyPressed(zoomKeyPressed) == false)
 	{
-		graphicsManager->Zoom(false);
-	}
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::M))
-	{
-		graphicsManager->ToggleZoomLock(false);
+		canAdjustZoom = true;
 	}
 
 	if (sf::Mouse::isButtonPressed(sf::Mouse::Left))

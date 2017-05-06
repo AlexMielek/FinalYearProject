@@ -24,7 +24,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
                      _In_ LPWSTR    lpCmdLine,
                      _In_ int       nCmdShow)
 {
-	GameManager testGameManager(sf::Vector2i(10, 10), "TerrainLandFoliageNoPlant.png");
+	GameManager testGameManager(sf::Vector2i(30, 10), "TerrainLandFoliageNoPlant.png");
 
 	while (testGameManager.GetGraphicsManager()->GetMainWindow()->isOpen())
 	{
