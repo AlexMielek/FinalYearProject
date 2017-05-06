@@ -39,6 +39,12 @@ public:
 	Map* GetGeneratedMap() { return map; }
 
 private:
+	int PerlinNoise(float x, float y);
+
+	float Lerp(float a, float b, float w);
+
+	float Gradient(int intx, int inty, float floaty, float floatx, float gradient);
+
 	Map* map;
 };
 
