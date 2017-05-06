@@ -149,7 +149,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BmpWriter.h" />
+    <ClInclude Include="Button.h" />
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="ComboBox.h" />
+    <ClInclude Include="ComboBoxSet.h" />
     <ClInclude Include="FinalYearProject.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="GraphicsManager.h" />
@@ -158,14 +161,19 @@
     <ClInclude Include="MapGenerator.h" />
     <ClInclude Include="MapGeneratorScreen.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="Slider.h" />
     <ClInclude Include="StartScreen.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Tile.h" />
+    <ClInclude Include="UI_Element.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BmpWriter.cpp" />
+    <ClCompile Include="Button.cpp" />
     <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="ComboBox.cpp" />
+    <ClCompile Include="ComboBoxSet.cpp" />
     <ClCompile Include="FinalYearProject.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="GraphicsManager.cpp" />
@@ -173,6 +181,7 @@
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="MapGenerator.cpp" />
     <ClCompile Include="MapGeneratorScreen.cpp" />
+    <ClCompile Include="Slider.cpp" />
     <ClCompile Include="StartScreen.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -181,6 +190,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Tile.cpp" />
+    <ClCompile Include="UI_Element.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="FinalYearProject.rc" />

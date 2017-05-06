@@ -23,6 +23,6 @@ private:
 
 	void insert_2_bytes(std::vector<uint8_t> & dest, const uint16_t & data);
 
-	size_t bitmap_encode_rgb(const uint8_t* rgb, int width, int height, uint8_t** output);
+	size_t bitmap_encode_rgb(const std::vector<uint8_t> rgb, int width, int height, uint8_t** output);
 };
 

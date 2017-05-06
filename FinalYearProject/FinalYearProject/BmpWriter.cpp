@@ -62,7 +62,7 @@ void BmpWriter::insert_2_bytes(std::vector<uint8_t> & dest, const uint16_t & dat
 	copy(separated_data.begin(), separated_data.end(), back_inserter(dest));
 }
 
-size_t BmpWriter::bitmap_encode_rgb(const uint8_t* rgb, int width, int height, uint8_t** output)
+size_t BmpWriter::bitmap_encode_rgb(const std::vector<uint8_t> rgb, int width, int height, uint8_t** output)
 {
 	std::vector<uint8_t> data;
 	data.push_back(0x42); //B
@@ -128,8 +128,20 @@ int BmpWriter::createBmp(int width, int height)
 		0x00, 0x00, 0xFF, 0xFF, 0x00, 0xFF };
 	//                |--------------|  |--------------|
 	//                     Blue              Purple
+
+	std::vector<uint8_t> dataVector;
+	int dataSize = width * height;
+	int i = 0;
+	while (i < dataSize)
+	{
+		dataVector.push_back(255);
+		dataVector.push_back(0);
+		dataVector.push_back(0);
+		i++;
+	}
+
 	uint8_t* output;
-	size_t output_size = bitmap_encode_rgb(data, width, height, &output);
+	size_t output_size = bitmap_encode_rgb(dataVector, width, height, &output);
 
 	std::ofstream file_output;
 	file_output.open("output.bmp");

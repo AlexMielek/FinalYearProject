@@ -29,7 +29,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
 	BmpWriter test;
 
-	test.createBmp(2, 2);
+	test.createBmp(960, 320);
 
 	while (testGameManager.GetGraphicsManager()->GetMainWindow()->isOpen())
 	{
